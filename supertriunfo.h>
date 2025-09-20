@@ -1,106 +1,28 @@
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+int main(){
 
-struct Carta {
     char estado;
-    char codigo[10]; // aumentado para evitar estouro
-    char nomeCidade[50];
-    int populacao;
+    char cidade[50];
+    int população, pontos_turisticos;
     float area;
-    float pib;
-    int pontosTuristicos;
-};
+    float densidade_demografica;
 
-void limparBuffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-}
+    printf("digite o estado:\n");
+    scanf("%s, & estado");
 
-void lerString(char *str, int tamanho) {
-    if (fgets(str, tamanho, stdin)) {
-        size_t len = strlen(str);
-        if (len > 0 && str[len - 1] == '\n') {
-            str[len - 1] = '\0';
-        }
-    }
-}
+    printf("digite o nome da cidade: \n");
+    scanf("%s, &cidade");
 
-int main() {
-    struct Carta carta1, carta2;
+    printf(" digite a população");
+    scanf("%d, &população");
 
-    printf("=== SUPER TRUNFO - CADASTRO DE CARTAS ===\n\n");
+    printf("digite a aea da cidade; \n");
+    scanf("%f, &area");
 
-    // Carta 1
-    printf("--- PRIMEIRA CARTA ---\n");
+    printf(" digite o numero de pontos tuisticos");
+    scanf("%d, &pontos_tuisticos");
 
-    printf("Estado (A-H): ");
-    scanf(" %c", &carta1.estado); // espaço antes do %c
-    limparBuffer();
 
-    printf("Codigo da carta (ex: A01): ");
-    lerString(carta1.codigo, sizeof(carta1.codigo));
 
-    printf("Nome da cidade: ");
-    lerString(carta1.nomeCidade, sizeof(carta1.nomeCidade));
-
-    printf("Populacao: ");
-    scanf("%d", &carta1.populacao);
-
-    printf("Area (em km2): "); // sem o símbolo ²
-    scanf("%f", &carta1.area);
-
-    printf("PIB (em bilhoes de reais): ");
-    scanf("%f", &carta1.pib);
-
-    printf("Numero de pontos turisticos: ");
-    scanf("%d", &carta1.pontosTuristicos);
-    limparBuffer();
-
-    // Carta 2
-    printf("\n--- SEGUNDA CARTA ---\n");
-
-    printf("Estado (A-H): ");
-    scanf(" %c", &carta2.estado);
-    limparBuffer();
-
-    printf("Codigo da carta (ex: B02): ");
-    lerString(carta2.codigo, sizeof(carta2.codigo));
-
-    printf("Nome da cidade: ");
-    lerString(carta2.nomeCidade, sizeof(carta2.nomeCidade));
-
-    printf("Populacao: ");
-    scanf("%d", &carta2.populacao);
-
-    printf("Area (em km2): ");
-    scanf("%f", &carta2.area);
-
-    printf("PIB (em bilhoes de reais): ");
-    scanf("%f", &carta2.pib);
-
-    printf("Numero de pontos turisticos: ");
-    scanf("%d", &carta2.pontosTuristicos);
-
-    // Exibir cartas
-    printf("\n\n=== DADOS DAS CARTAS CADASTRADAS ===\n\n");
-
-    printf("Carta 1:\n");
-    printf("Estado: %c\n", carta1.estado);
-    printf("Codigo: %s\n", carta1.codigo);
-    printf("Nome da Cidade: %s\n", carta1.nomeCidade);
-    printf("Populacao: %d\n", carta1.populacao);
-    printf("Area: %.2f km2\n", carta1.area);
-    printf("PIB: %.2f bilhoes de reais\n", carta1.pib);
-    printf("Numero de Pontos Turisticos: %d\n", carta1.pontosTuristicos);
-
-    printf("\nCarta 2:\n");
-    printf("Estado: %c\n", carta2.estado);
-    printf("Codigo: %s\n", carta2.codigo);
-    printf("Nome da Cidade: %s\n", carta2.nomeCidade);
-    printf("Populacao: %d\n", carta2.populacao);
-    printf("Area: %.2f km2\n", carta2.area);
-    printf("PIB: %.2f bilhoes de reais\n", carta2.pib);
-    printf("Numero de Pontos Turisticos: %d\n", carta2.pontosTuristicos);
-
-    return 0;
+return 0;
 }
