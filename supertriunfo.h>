@@ -1,26 +1,28 @@
 #include<stdio.h>
 int main(){
 
-    char estado;
+    char estado[50];
     char cidade[50];
-    int população, pontos_turisticos;
+    int populacao, pontos_turisticos;
     float area;
     float densidade_demografica;
 
     printf("digite o estado:\n");
-    scanf("%s, & estado");
+    scanf("%s", &estado);
 
     printf("digite o nome da cidade: \n");
-    scanf("%s, &cidade");
+    scanf("%s", &cidade);
 
-    printf(" digite a população");
-    scanf("%d, &população");
+    printf(" digite a populaçao:\n");
+    scanf("%d", &populacao);
 
-    printf("digite a aea da cidade; \n");
-    scanf("%f, &area");
+    printf("digite a area da cidade:\n");
+    scanf("%f", &area);
 
-    printf(" digite o numero de pontos tuisticos");
-    scanf("%d, &pontos_tuisticos");
+    printf(" digite o numero de pontos tuisticos:\n");
+    scanf("%d", &pontos_turisticos);
+
+
 
 
 
